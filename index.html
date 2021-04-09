@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List Vue.js v.3</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Start App -->
+  <div id="app">
+    <div class="header">
+      <div class="container">
+        <div class="logo">ToDo List</div>
+        <div class="form">
+          <input type="text">
+          <button class="btn">Add a new task</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2>
+        <span>To Do</span>
+        <span class="mask-num">1</span>
+      </h2>
+      <ul class="mask-list">
+        <li>
+          <div>
+            <input type="checkbox">
+            <span>{{ }}</span>
+          </div>
+          <button class="btn-remove">Remove</button>
+        </li>
+      </ul>
+      <h2>
+        <span>Done</span>
+        <span class="mask-num">10</span>
+      </h2>
+      <ul class="mask-list complete-list">
+        <li>
+          <div>
+            <input type="checkbox" checked>
+            <span></span>
+          </div>
+          <button class="btn-remove">Remove</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- End App -->
+<script src="https://unpkg.com/vue@next"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
