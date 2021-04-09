@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ToDo List Vue.js v.3</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=1.00">
 </head>
 <body>
   <!-- Start App -->
@@ -12,26 +12,32 @@
     <div class="header">
       <div class="container">
         <div class="logo">ToDo List</div>
+
         <div class="form">
-          <input type="text">
-          <button class="btn">Add a new task</button>
+          <input type="text" 
+          v-bind:value="inputText" v-on:input="inInput" v-on:keypress.enter="addTask">
+
+          <button class="btn" v-on:click="addTask">Add a new task</button>
+
         </div>
       </div>
     </div>
     <div class="container">
+    	<!-- Список toDO -->
       <h2>
         <span>To Do</span>
         <span class="mask-num">1</span>
       </h2>
       <ul class="mask-list">
-        <li>
+        <li v-for="item in list_arr">
           <div>
-            <input type="checkbox">
-            <span>{{ }}</span>
+            <input type="checkbox" v-on:change="doCheck(index, 'need')">
+            <span>{{ item }}</span>
           </div>
           <button class="btn-remove">Remove</button>
         </li>
       </ul>
+      <!-- Список DONE -->
       <h2>
         <span>Done</span>
         <span class="mask-num">10</span>
@@ -39,7 +45,7 @@
       <ul class="mask-list complete-list">
         <li>
           <div>
-            <input type="checkbox" checked>
+            <input type="checkbox" v-on:change="doCheck(index, 'complete')">
             <span></span>
           </div>
           <button class="btn-remove">Remove</button>
@@ -50,6 +56,6 @@
 
   <!-- End App -->
 <script src="https://unpkg.com/vue@next"></script>
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="app.js?v=1.00"></script>
 </body>
 </html>
