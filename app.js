@@ -4,7 +4,8 @@ Vue.createApp({
 		return {
 			inputText: '',
 			list_arr: [],
-			counter: 0
+			counter: 0,
+			index: 0
 		}
 	},
 	methods: {
@@ -19,13 +20,12 @@ Vue.createApp({
 			console.log('li_1 = '+this.list_arr[this.counter])
 			this.inputText = '';
 			this.counter++;
+			console.log('index ' + this.index)
 		},
-		doCheck(index, type) {
+		doCheck(item,type) {
 			if(type === 'need') {
-				//мы вырезаем элемент из массива и вствляем в массив "Зделано"
-				console.log('Нарезаем массив');	
-				console.log('index = '+this.index); //выведет undefined
-				//что такое индекс
+				this.index=this.list_arr.indexOf(item,0);
+				console.log('ты нажал на '+this.list_arr[this.index])
 			}
 		}
 		

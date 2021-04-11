@@ -31,7 +31,7 @@
       <ul class="mask-list">
         <li v-for="item in list_arr">
           <div>
-            <input type="checkbox" v-on:change="doCheck(index, 'need')">
+            <input type="checkbox" v-on:change="doCheck(item, 'need')">
             <span>{{ item }}</span>
           </div>
           <button class="btn-remove">Remove</button>
