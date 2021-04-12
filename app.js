@@ -15,15 +15,17 @@ Vue.createApp({
 		//получаем значение
 		inInput(event) {
 			// отлавливаем что записали в инпут
-			this.inputText = event.target.value;
+				this.inputText = event.target.value;
 		},
 		//выводим его при клике в список ТуДу
 		addTask(event) {
-			//добавляем задачу в массив
-			this.list_arr.push(this.inputText);
-			//очищаем поле и увеличиваем счетчик
-			this.inputText = '';
-			this.counter++;
+			if(this.inputText > 0) {
+				//добавляем задачу в массив
+				this.list_arr.push(this.inputText);
+				//очищаем поле и увеличиваем счетчик
+				this.inputText = '';
+				this.counter++;
+			}	
 		},
 		//проверяем клик по Чекбоксу
 		doCheck(item,type) {
