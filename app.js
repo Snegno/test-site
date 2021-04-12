@@ -16,16 +16,19 @@ Vue.createApp({
 		inInput(event) {
 			// отлавливаем что записали в инпут
 				this.inputText = event.target.value;
+				console.log(this.inputText.trim())
 		},
 		//выводим его при клике в список ТуДу
 		addTask(event) {
-			if(this.inputText > 0) {
+			if(this.inputText > 0 || this.inputText.trim() != '') {
+				console.log('working')
 				//добавляем задачу в массив
 				this.list_arr.push(this.inputText);
 				//очищаем поле и увеличиваем счетчик
 				this.inputText = '';
 				this.counter++;
 			}	
+			console.log('not work')
 		},
 		//проверяем клик по Чекбоксу
 		doCheck(item,type) {
