@@ -40,7 +40,6 @@ Vue.createApp({
 				this.list_arr[this.list_arr.length] = this.list_arr_close[this.index]; 
 				//удаляем из второго массива скопированный эл-нт
 				this.list_arr_close.splice(this.index,1);
-				console.log('массив предстоящих задач = ' + this.list_arr)
 			}
 		},
 		removeTask(item) {
