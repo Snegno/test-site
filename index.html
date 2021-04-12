@@ -15,9 +15,12 @@
 
         <div class="form">
           <input type="text" 
-          v-bind:value="inputText" v-on:input="inInput" v-on:keypress.enter="addTask">
+          v-bind:value="inputText" 
+          v-on:input="inInput" 
+          v-on:keypress.enter="addTask">
 
-          <button class="btn" v-on:click="addTask">Add a new task</button>
+          <button class="btn" 
+          v-on:click="addTask">Add a new task</button>
 
         </div>
       </div>
@@ -26,29 +29,33 @@
     	<!-- Список toDO -->
       <h2>
         <span>To Do</span>
-        <span class="mask-num">1</span>
+        <span class="mask-num">{{ one_list_count=list_arr.length }}</span>
       </h2>
       <ul class="mask-list">
         <li v-for="item in list_arr">
           <div>
-            <input type="checkbox" v-on:change="doCheck(item, 'need')">
+            <input type="checkbox" 
+            v-on:change="doCheck(item, 'need')">
             <span>{{ item }}</span>
           </div>
-          <button class="btn-remove">Remove</button>
+          <button class="btn-remove"
+          v-on:click="removeTask(item)">Remove</button>
         </li>
       </ul>
       <!-- Список DONE -->
       <h2>
         <span>Done</span>
-        <span class="mask-num">10</span>
+        <span class="mask-num">{{ two_list_count=list_arr_close.length }}</span>
       </h2>
       <ul class="mask-list complete-list">
-        <li>
+        <li v-for="item in list_arr_close">
           <div>
-            <input type="checkbox" v-on:change="doCheck(index, 'complete')">
-            <span></span>
+            <input type="checkbox" 
+            v-on:change="doCheck(item, 'complete')">
+            <span>{{ item }}</span>
           </div>
-          <button class="btn-remove">Remove</button>
+          <button class="btn-remove" 
+          v-on:click="removeTask(item)">Remove</button>
         </li>
       </ul>
     </div>
